@@ -18,7 +18,7 @@ stages:
     - script: echo $(var2) is in $(var1)
   - job: One1
     steps:
-    - script: echo $(var2) completed
+    - script: echos $(var2) completed
   dependsOn: []
 
 - stage: Deploy
