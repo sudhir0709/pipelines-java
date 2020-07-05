@@ -19,6 +19,7 @@ stages:
   - job: One1
     steps:
     - script: echo $(var2) completed
+  dependsOn: []
 
 - stage: Deploy
   jobs:
