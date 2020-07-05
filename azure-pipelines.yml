@@ -5,10 +5,7 @@ variables:
   var3: build
   var4: deploy
   
-resources:
-containers:
-- container: linux # reusable alias
-  image: ubuntu:16.04
+
   
 stages:
 - stage: Build
@@ -37,6 +34,10 @@ stages:
     steps:
     - script: echo $(var4) is in $(var1)
 - stage: Container
+  resources:
+    containers:
+    - container: linux # reusable alias
+      image: ubuntu:16.04
   jobs:
   - job: a
     container: linux # reference
