@@ -33,6 +33,7 @@ stages:
   - job: myjob4
     steps:
     - script: echo $(var4) is in $(var1)
+/*
 - stage: Container
   resources:
     containers:
@@ -42,4 +43,5 @@ stages:
   - job: a
     container: linux # reference
   - job: b
-    container: linux # reference
+    container: linux # reference 
+ */
