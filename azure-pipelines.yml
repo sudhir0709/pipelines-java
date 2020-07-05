@@ -2,7 +2,26 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 variables:
   var1: progress
   var2: testing
-jobs:
-- job: One0
-  steps:
-  - script: echo $(var2) is $(var1)
+  var3: build
+  var4: deploy
+Stages:
+  - stage: Build
+    jobs:
+      - job: One0
+        steps:
+          - script: echo $(var3) is in $(var1)
+
+  - stage: Test
+    jobs:
+      - job: One0
+        steps:
+          - script: echo $(var2) is in $(var1)
+      - job: One1
+        steps:
+          - script: echo $(var2) completed
+
+  - stage: Deploy
+    jobs:
+      - job: One0
+        steps:
+          - script: echo $(var4) is in $(var1)
