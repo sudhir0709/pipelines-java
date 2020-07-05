@@ -4,24 +4,24 @@ variables:
   var2: testing
   var3: build
   var4: deploy
-Stages:
-  - stage: Build
-    jobs:
-      - job: One0
-        steps:
-          - script: echo $(var3) is in $(var1)
+stages:
+- stage: Build
+  jobs:
+  - job: One0
+    steps:
+    - script: echo $(var3) is in $(var1)
 
-  - stage: Test
-    jobs:
-      - job: One0
-        steps:
-          - script: echo $(var2) is in $(var1)
-      - job: One1
-        steps:
-          - script: echo $(var2) completed
+- stage: Test
+  jobs:
+  - job: One0
+    steps:
+    - script: echo $(var2) is in $(var1)
+  - job: One1
+    steps:
+    - script: echo $(var2) completed
 
-  - stage: Deploy
-    jobs:
-      - job: One0
-        steps:
-          - script: echo $(var4) is in $(var1)
+- stage: Deploy
+  jobs:
+  - job: One0
+    steps:
+    - script: echo $(var4) is in $(var1)
