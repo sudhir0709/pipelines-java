@@ -1,7 +1,8 @@
 name: $(Date:yyyyMMdd)$(Rev:.r)
 variables:
-  var1: value1
+  var1: progress
+  var2: testing
 jobs:
-- job: One
+- job: One0
   steps:
-  - script: echo First step!
+  - script: echo $(var2) is $(var1)
