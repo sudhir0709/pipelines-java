@@ -7,22 +7,26 @@ variables:
 stages:
 - stage: Build
   jobs:
-  - job: One0
+  - job: myjob1
     steps:
     - script: echo $(var3) is in $(var1)
 
 - stage: Test
   jobs:
-  - job: One0
+  - job: myjob2
     steps:
     - script: echo $(var2) is in $(var1)
-  - job: One1
+  - job: myjob3
+    displayName: My First Job
     steps:
     - script: echos $(var2) completed
+    continueOnError: true
+    workspace:
+      clean: outputs
   dependsOn: []
 
 - stage: Deploy
   jobs:
-  - job: One0
+  - job: myjob4
     steps:
     - script: echo $(var4) is in $(var1)
